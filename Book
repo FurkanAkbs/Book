@@ -1,0 +1,91 @@
+package book;
+
+public class Author{
+	String name;
+	Book book;
+	
+	public Author(String name) {
+		this.name = name;
+	}
+	public Book getBook() {
+		return book;
+	}
+	public void setBook(Book book) {
+		this.book = book;
+	}
+	@Override
+	public String toString() {
+		return "Author [name=" + name+ "]";
+	}
+}
+package book;
+
+public class Book{
+	String title;
+	String type;
+	int page;
+	int currentPage;
+	boolean isHardCover;
+	Author author;
+	
+	public Book(String title,String type,int page,int currentPage,boolean isHardCover,Author author) {	
+		this.title = title;
+		this.type = type;
+		this.page = page;
+		this.currentPage = currentPage;
+		this.isHardCover = isHardCover;
+		this.author = author;	
+		author.setBook(this);
+	}
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", type=" + type + ", page=" + page + ", currentPage=" + currentPage
+				+ ", isHardCover?=" + isHardCover + "]";
+	}
+}
+package book;
+
+public class Reader{
+	String name;
+	int age;
+	char sex;
+  
+	Reader(String name,int age,char sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+	}
+	public void readingTheBook(Book book) {
+		if(book.currentPage<book.page) {
+			System.out.println(name+" is reading page "+ book.currentPage+" of the "+book.title);
+			}else if(book.currentPage == book.page){
+				System.out.println(name+" doesn't read the "+book.title);	
+		}
+	}
+	@Override
+	public String toString() {
+		return "Reader [name=" + name + ", age=" + age + ", sex=" + sex + "]";
+	}
+}
+package book;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Author author = new Author("Raymond Murphy");
+		Book book = new Book("English Grammar Book","Grammar Book",600,350,false,author);
+		Reader reader = new Reader("Furkan",23,'M');
+		
+		System.out.println(author.toString());
+		System.out.println();
+		System.out.println(book.toString());
+		System.out.println();
+		System.out.println(reader.toString());
+		System.out.println();
+		reader.readingTheBook(book);
+	
+		//author.setBook(this); --> System.out.println(author.getBook().title);
+		System.out.println(author.getBook().title);
+	}
+}
