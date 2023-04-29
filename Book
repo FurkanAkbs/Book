@@ -1,3 +1,18 @@
+	/*
+		 * Ödev : Bir kişinin kitap okumasını simule edecek şekilde Reader, Book ve Author
+		 * sınıflarını, uygun özellikler, set/get ve gerekli diğer metotlar ile
+		 * oluşturun. a. Book’ta olabilecek özellikler • Author author (Sadece name
+		 * özelliğine sahip olan) • String title • int page • String type • boolean
+		 * isHardCover • int currentPage Reader’ta olabilecek özellikler • String name •
+		 * int age • char sex c. Reader’a kitap okuması için read(Book book) şeklinde
+		 * bir metot koyun. d. İçinde bu sınıfların nesnelerinin oluşturulduğu ve main
+		 * metoda sahip bir ReaderTest sınıfı oluşturun. e. Bir kaç Reader ve Book
+		 * nesnesi ile okumayı simule edin. Reader, Book ve Author sınıflarına kurucular
+		 * ve başlatma bloklarını ekleyin. Mümkün olan her yerde this ve this()
+		 * kullanın.
+		 */
+
+
 package book;
 
 public class Author{
